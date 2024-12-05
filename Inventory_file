@@ -1,0 +1,12 @@
+[client]
+172.31.21.198  #IP or DNS
+
+[localhost]
+localhost #To run in local machine 
+
+
+
+[localhost:vars]
+Course="Devops"
+Trainer="Sivakumar"
+Duration="110Hrs"

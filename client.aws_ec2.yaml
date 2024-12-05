@@ -1,0 +1,6 @@
+plugin: amazon.aws.aws_ec2
+region:
+  - us-east-1
+filters:
+  tag:Name:
+  - client #name of the host in aws 

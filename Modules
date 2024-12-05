@@ -1,0 +1,32 @@
+
+Linux-Everything is a commnad 
+In linux we have shell cript to run list of coammds 
+
+Ansible-Everything is a module 
+In ansible we have palybook to run list of commands 
+
+
+To connect the server via ssh usually we need ip, user name and password.(Password based SSH)
+In asnible also we need to give the destination server IP,Username & Password in a single command to connect.
+
+
+Ad-Hoc Command:
+
+Ping module:
+ ansible -i <Destination IP>, all -e ansible_user=<Name> -e ansible_password=<Password> -m ping
+
+ -m=module
+ -i=Inventory, we can create a file and add all the server IPs which we want to ping.
+ -e=To pass an arugment to give variables.
+
+ Yum module:To install packages
+ ansible -i 44.204.187.205, all -e ansible_user=centos -e ansible_password=DevOps321 -m yum -a "name=nginx state=present" --become
+ --become (or) -b=sudo 
+
+
+ Service Module:To start service 
+ ansible -i 44.204.187.205, all -e ansible_user=centos -e ansible_password=DevOps321 -m service -a "name=nginx state=started" --become
+
+
+
+
