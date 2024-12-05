@@ -1,0 +1,21 @@
+- name: conditions
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: check roboshop user exists or not
+    ansible.builtin.command: id roboshop  #If we don't have ansble modules then we can commands directly.
+    register: outputfile #outputfile is a variable that gets input form above command.
+    ignore_errors: true # ansilbe will exit if it got error where shell will not exit.
+  
+  - name: print variable value
+    ansible.builtin.debug:
+      msg: "User output is: {{outputfile}}" #we can give any name to store output
+  
+  - name: print exit status or return code #In shell we have $? for exit status here rc(return code).
+    ansible.builtin.debug:
+      msg: "status is: {{outputfile.rc}}"
+
+  - name: create user
+    ansible.builtin.user:
+      name: roboshop
+    when: outputfile.rc != 0 #condition. 
