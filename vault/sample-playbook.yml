@@ -1,0 +1,15 @@
+- name: ping playbook    #Name of the palybook
+  hosts: client          #Host name which is mentioned in inventory file 
+  tasks: 
+  - name: ping the node server #Name of the task
+    ansible.builtin.ping:
+
+
+#We are giving our username & password in terminal AND ansible.cfg file which is not secure so use vault.
+
+#The command to ru the play book: ansible-playbook sample-playbook.yml
+#vault passwrd is devops
+
+#if "ask_vault_pass=True" is not configured in ansible.cfg then used the below command.
+#ansible-playbook sample-playbook.yml --ask-vault-pass
+
