@@ -1,0 +1,8 @@
+- name: variables from PLAY level
+  hosts: localhost
+  vars_files:
+  - variables.yml #Accessing the variables from this file so instead of chainging the code and effecting the code we are maintaing the variables in a seperate file
+  tasks:
+  - name: check variables
+    ansible.builtin.debug:
+      msg: "Hi, I am learning {{Course}}, Trainer is {{Trainer}}, Duration is {{Duration}}"

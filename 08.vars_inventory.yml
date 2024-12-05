@@ -1,0 +1,16 @@
+#The playbook will collect the information from invertory file
+- name: variables from PLAY level
+  hosts: localhost
+  tasks:
+  - name: check variables
+    ansible.builtin.debug:
+      msg: "Hi, I am learning {{Course}}, Trainer is {{Trainer}}, Duration is {{Duration}}"
+
+
+
+      
+#Add the below data in inventory file.
+#[localhost]
+#Course="Devops"
+#Trainer="Sivakumar"
+#Duration="110Hrs"

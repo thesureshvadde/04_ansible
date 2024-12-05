@@ -1,0 +1,9 @@
+- name: Passing the arguments as command
+  hosts: localhost
+  tasks:
+  - name: check variables
+    ansible.builtin.debug:
+      msg: "Hello {{PERSON}}, Good {{WISHES}}"
+
+#Command to run 
+#ansible-playbook -i Inventory_file -e ansible_user=centos -e ansible_password=DevOps321 -e "PERSON=Hari" -e "WISHES=Morning" 09.vars_from_args.yaml
