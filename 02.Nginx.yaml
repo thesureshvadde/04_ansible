@@ -1,0 +1,12 @@
+- name: Installing nginx
+  hosts: client
+  become: true #to run the script with root access
+  tasks: 
+  - name: Instaling nginx package
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: run nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
